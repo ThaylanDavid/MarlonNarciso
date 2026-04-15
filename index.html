@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════════
+       SEO & OPEN GRAPH — edite conforme necessário
+  ════════════════════════════════════════════════ -->
+  <title>Marlon Narciso | Personal Trainer em Santo Antônio - RN</title>
+  <meta name="description" content="Transforme seu corpo com método, ciência e acompanhamento real. Personal trainer em Santo Antônio - RN. Avaliação gratuita — agende agora." />
+  <meta name="keywords" content="personal trainer, Santo Antônio RN, treino personalizado, emagrecimento, hipertrofia, Marlon Narciso" />
+  <meta name="author" content="Marlon Narciso" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Marlon Narciso | Personal Trainer em Santo Antônio - RN" />
+  <meta property="og:description" content="Transforme seu corpo com método, ciência e acompanhamento real. Avaliação gratuita — agende agora." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://marlonnarciso.com.br" />
+  <!-- SUBSTITUA pela URL real da imagem de capa -->
+  <meta property="og:image" content="[URL_IMAGEM_OG]" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Marlon Narciso | Personal Trainer" />
+  <meta name="twitter:description" content="Transforme seu corpo com método, ciência e acompanhamento real." />
+
+  <!-- Google Fonts — Bebas Neue (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════
+       DESIGN TOKENS
+    ═══════════════════════════════════════ */
+    :root {
+      --purple:   #7C3AED;
+      --purple-d: #5B21B6;
+      --purple-l: #A78BFA;
+      --yellow:   #FBBF24;
+      --yellow-d: #D97706;
+      --bg:       #FAF5FF;
+      --dark:     #1E1B4B;
+      --dark2:    #2D2A6E;
+      --neutral:  #E9D5FF;
+      --white:    #FFFFFF;
+      --gray:     #6B7280;
+      --radius:   1rem;
+      --shadow:   0 8px 40px rgba(124,58,237,.18);
+    }
+
+    /* ═══════════════════════════════════════
+       RESET & BASE
+    ═══════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ═══════════════════════════════════════
+       TIPOGRAFIA
+    ═══════════════════════════════════════ */
+    .display {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: .03em;
+      line-height: .95;
+    }
+    h2 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.1; }
+    h3 { font-size: 1.25rem; font-weight: 600; }
+    p  { font-size: 1rem; color: var(--gray); line-height: 1.75; }
+
+    /* ═══════════════════════════════════════
+       UTILITÁRIOS
+    ═══════════════════════════════════════ */
+    .container { width: min(1200px, 92%); margin-inline: auto; }
+    .section    { padding: 7rem 0; }
+    .section--dark { background: var(--dark); color: var(--white); }
+    .section--dark p { color: var(--neutral); }
+    .tag {
+      display: inline-block;
+      background: var(--neutral);
+      color: var(--purple-d);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .35rem .85rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+    .section--dark .tag { background: rgba(124,58,237,.3); color: var(--purple-l); }
+
+    /* ═══════════════════════════════════════
+       BOTÕES
+    ═══════════════════════════════════════ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .9rem 2rem;
+      border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+      text-decoration: none;
+    }
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--dark);
+      box-shadow: 0 6px 30px rgba(251,191,36,.45);
+    }
+    .btn-primary:hover { box-shadow: 0 10px 40px rgba(251,191,36,.6); filter: brightness(1.05); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,.5);
+    }
+    .btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
+    .btn-purple {
+      background: var(--purple);
+      color: var(--white);
+      box-shadow: 0 6px 30px rgba(124,58,237,.35);
+    }
+    .btn-purple:hover { box-shadow: 0 10px 40px rgba(124,58,237,.5); filter: brightness(1.1); }
+
+    /* ═══════════════════════════════════════
+       NAV
+    ═══════════════════════════════════════ */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 999;
+      padding: 1rem 0;
+      transition: background .3s, box-shadow .3s;
+    }
+    #navbar.scrolled {
+      background: rgba(30,27,75,.97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 30px rgba(0,0,0,.3);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      color: var(--white);
+      letter-spacing: .06em;
+    }
+    .nav-logo span { color: var(--yellow); }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,.75);
+      font-size: .9rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--yellow); }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: .3s;
+    }
+    @media(max-width:768px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        position: fixed; top: 0; right: -100%;
+        width: 75%; max-width: 320px;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        background: var(--dark);
+        padding: 2rem;
+        transition: right .35s ease;
+        gap: 2.5rem;
+      }
+      .nav-links.open { right: 0; }
+      .nav-links a { font-size: 1.1rem; }
+    }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      /* ─── SUBSTITUA pela sua foto de fundo ─── */
+      background: linear-gradient(135deg, #1E1B4B 0%, #2D2A6E 45%, #3B0764 100%);
+    }
+    /* Overlay grid decorativo */
+    #hero::before {
+      content:'';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(124,58,237,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124,58,237,.08) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    /* Blur orbs */
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .hero-orb-1 {
+      width: 500px; height: 500px;
+      background: rgba(124,58,237,.35);
+      top: -100px; right: -100px;
+    }
+    .hero-orb-2 {
+      width: 400px; height: 400px;
+      background: rgba(251,191,36,.15);
+      bottom: -80px; left: -80px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      padding: 8rem 0 5rem;
+    }
+    .hero-content { color: var(--white); }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(251,191,36,.15);
+      border: 1px solid rgba(251,191,36,.3);
+      color: var(--yellow);
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .4rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      margin-bottom: 1.5rem;
+      color: var(--white);
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--yellow);
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+      line-height: 1.7;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+    .hero-stat strong {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      color: var(--yellow);
+      letter-spacing: .04em;
+    }
+    .hero-stat span { font-size: .8rem; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .06em; }
+
+    /* ─── Foto do personal no hero ─── */
+    .hero-photo-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-photo-bg {
+      position: absolute;
+      width: 90%; height: 90%;
+      background: var(--purple);
+      border-radius: 2rem;
+      top: 5%; left: 5%;
+      opacity: .4;
+      transform: rotate(4deg);
+    }
+    .hero-photo {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 2rem;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      box-shadow: 0 30px 80px rgba(0,0,0,.5);
+    }
+    /* ─── SUBSTITUA pelo <img> real ─── */
+    .hero-photo .photo-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(160deg, #4C1D95, #1E1B4B);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,.4);
+      font-size: .85rem;
+      gap: .75rem;
+    }
+    .hero-photo .photo-placeholder svg { opacity: .3; }
+
+    /* Badge sobre a foto */
+    .hero-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      left: -1.5rem;
+      background: var(--yellow);
+      color: var(--dark);
+      padding: 1rem 1.4rem;
+      border-radius: 1rem;
+      font-weight: 700;
+      font-size: .85rem;
+      box-shadow: 0 8px 30px rgba(251,191,36,.4);
+      line-height: 1.3;
+      z-index: 3;
+    }
+    .hero-badge strong { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; display: block; }
+
+    @media(max-width:900px) {
+      .hero-inner { grid-template-columns: 1fr; padding: 7rem 0 4rem; }
+      .hero-photo-wrap { order: -1; }
+      .hero-photo { max-width: 300px; margin: 0 auto; }
+      .hero-badge { left: auto; right: 0; }
+    }
+
+    /* ═══════════════════════════════════════
+       DIFERENCIAIS
+    ═══════════════════════════════════════ */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--neutral);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--purple), var(--yellow));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s ease;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--purple-l); }
+    .card:hover::after { transform: scaleX(1); }
+    .card-icon {
+      width: 56px; height: 56px;
+      background: var(--neutral);
+      border-radius: .875rem;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+      font-size: 1.6rem;
+    }
+    .card h3 { margin-bottom: .5rem; color: var(--dark); }
+
+    /* ═══════════════════════════════════════
+       COMO FUNCIONA
+    ═══════════════════════════════════════ */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+      position: relative;
+    }
+    /* Linha conectora */
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 2.5rem;
+      left: 16.66%;
+      right: 16.66%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--purple-l), var(--yellow));
+      z-index: 0;
+    }
+    .step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .step-num {
+      width: 5rem; height: 5rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--purple-d));
+      color: var(--white);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 8px 30px rgba(124,58,237,.4);
+    }
+    .step h3 { color: var(--white); margin-bottom: .5rem; }
+    @media(max-width:600px) {
+      .steps { grid-template-columns: 1fr; gap: 3rem; }
+      .steps::before { display: none; }
+    }
+
+    /* ═══════════════════════════════════════
+       DEPOIMENTOS
+    ═══════════════════════════════════════ */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .testimonial {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: transform .3s ease, border-color .3s;
+    }
+    .testimonial:hover { transform: translateY(-4px); border-color: rgba(251,191,36,.4); }
+    .stars { color: var(--yellow); font-size: 1.1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+    .testimonial blockquote {
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(255,255,255,.8);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: .875rem;
+    }
+    /* ─── SUBSTITUA pelo <img> real ─── */
+    .avatar {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple-l), var(--purple));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .testimonial-author strong { display: block; font-size: .95rem; color: var(--white); }
+    .testimonial-author span  { font-size: .8rem; color: rgba(255,255,255,.5); }
+
+    /* Antes/depois strip */
+    .results-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .result-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 3/4;
+      background: linear-gradient(160deg, #3B0764, #1E1B4B);
+    }
+    .result-card .result-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1rem;
+      background: linear-gradient(transparent, rgba(0,0,0,.8));
+      color: var(--white);
+      font-size: .85rem;
+      font-weight: 600;
+    }
+    .result-card .result-label span {
+      display: block;
+      color: var(--yellow);
+      font-size: .75rem;
+      font-weight: 400;
+    }
+    /* ─── Placeholder foto resultado ─── */
+    .result-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: .5rem;
+      color: rgba(255,255,255,.25);
+      font-size: .75rem;
+    }
+
+    /* ═══════════════════════════════════════
+       SOBRE O PERSONAL
+    ═══════════════════════════════════════ */
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .sobre-foto {
+      position: relative;
+    }
+    .sobre-foto-img {
+      border-radius: 2rem;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background: linear-gradient(160deg, #E9D5FF, #C4B5FD);
+      /* ─── SUBSTITUA pelo <img> real ─── */
+    }
+    .sobre-foto-img .photo-placeholder2 {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      color: rgba(124,58,237,.4);
+      font-size: .85rem; gap: .5rem;
+    }
+    .sobre-deco {
+      position: absolute;
+      width: 200px; height: 200px;
+      background: var(--yellow);
+      border-radius: 1.5rem;
+      bottom: -1.5rem; right: -1.5rem;
+      z-index: -1;
+      opacity: .6;
+    }
+    .sobre-cert-badge {
+      position: absolute;
+      top: 1.5rem; right: -1.5rem;
+      background: var(--purple);
+      color: var(--white);
+      padding: 1rem 1.25rem;
+      border-radius: 1rem;
+      font-size: .85rem;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+      line-height: 1.4;
+      max-width: 160px;
+      text-align: center;
+    }
+    .sobre-cert-badge strong { font-family:'Bebas Neue',sans-serif; font-size:1.4rem; display:block; color:var(--yellow); }
+    .sobre-content .tag { margin-bottom: 1rem; }
+    .sobre-content h2 { margin-bottom: 1.25rem; }
+    .sobre-content p { margin-bottom: 1rem; }
+    .creds {
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+      margin: 1.75rem 0 2rem;
+    }
+    .cred {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      font-size: .95rem;
+      font-weight: 500;
+      color: var(--dark);
+    }
+    .cred-dot {
+      width: 8px; height: 8px;
+      background: var(--purple);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    @media(max-width:850px) {
+      .sobre-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .sobre-cert-badge { right: 0; }
+    }
+
+    /* ═══════════════════════════════════════
+       PLANOS
+    ═══════════════════════════════════════ */
+    .planos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      align-items: start;
+    }
+    .plano {
+      border-radius: var(--radius);
+      padding: 2.25rem;
+      border: 2px solid var(--neutral);
+      background: var(--white);
+      position: relative;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .plano:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .plano--destaque {
+      border-color: var(--purple);
+      background: linear-gradient(160deg, #FAF5FF, #F3E8FF);
+      transform: scale(1.03);
+    }
+    .plano--destaque:hover { transform: scale(1.03) translateY(-6px); }
+    .plano-label {
+      position: absolute;
+      top: -1px; left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      background: linear-gradient(90deg, var(--purple), var(--purple-d));
+      color: var(--white);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .3rem 1rem;
+      border-radius: 50px;
+      white-space: nowrap;
+    }
+    .plano-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .plano-nome { font-size: 1.35rem; font-weight: 700; color: var(--dark); margin-bottom: .25rem; }
+    .plano-desc { font-size: .9rem; color: var(--gray); margin-bottom: 1.5rem; }
+    .plano-preco {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: var(--purple);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+    .plano-preco sup { font-size: 1.4rem; vertical-align: super; }
+    .plano-preco sub { font-size: 1rem; color: var(--gray); font-family: 'DM Sans', sans-serif; font-weight: 400; }
+    .plano-lista { display: flex; flex-direction: column; gap: .65rem; margin-bottom: 2rem; }
+    .plano-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .65rem;
+      font-size: .9rem;
+      color: var(--dark);
+    }
+    .plano-item-check {
+      width: 20px; height: 20px;
+      background: var(--neutral);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: .7rem;
+      color: var(--purple-d);
+    }
+    .plano--destaque .plano-item-check { background: var(--purple); color: var(--white); }
+    @media(max-width:850px) {
+      .planos-grid { grid-template-columns: 1fr; }
+      .plano--destaque { transform: none; }
+    }
+
+    /* ═══════════════════════════════════════
+       CTA BANNER
+    ═══════════════════════════════════════ */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--purple-d), var(--purple));
+      border-radius: 2rem;
+      padding: 4rem;
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content:'';
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(251,191,36,.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(255,255,255,.06) 0%, transparent 50%);
+    }
+    .cta-banner > * { position: relative; z-index: 1; }
+    .cta-banner h2 { color: var(--white); margin-bottom: 1rem; }
+    .cta-banner p { color: rgba(255,255,255,.75); max-width: 520px; margin: 0 auto 2.5rem; }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,.6);
+      padding: 4rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .footer-brand p { font-size: .9rem; margin-top: .75rem; max-width: 280px; line-height: 1.7; }
+    .footer-col h4 {
+      color: var(--white);
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: .65rem; }
+    .footer-col ul li a { font-size: .9rem; transition: color .2s; }
+    .footer-col ul li a:hover { color: var(--yellow); }
+    .social-links { display: flex; gap: .75rem; margin-top: 1.5rem; }
+    .social-link {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      transition: background .2s, transform .2s;
+    }
+    .social-link:hover { background: var(--purple); transform: translateY(-3px); }
+    .footer-bottom {
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: .82rem;
+    }
+    .footer-bottom a { transition: color .2s; }
+    .footer-bottom a:hover { color: var(--yellow); }
+    @media(max-width:900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width:500px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .cta-banner { padding: 2.5rem 1.5rem; }
+    }
+
+    /* ═══════════════════════════════════════
+       SCROLL ANIMATIONS
+    ═══════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+
+    /* ═══════════════════════════════════════
+       WHATSAPP FLOAT
+    ═══════════════════════════════════════ */
+    .wa-float {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      z-index: 998;
+      width: 60px; height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 30px rgba(37,211,102,.4);
+      transition: transform .25s ease, box-shadow .25s ease;
+      animation: pulse-wa 2.5s infinite;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 40px rgba(37,211,102,.5); }
+    @keyframes pulse-wa {
+      0%,100% { box-shadow: 0 6px 30px rgba(37,211,102,.4); }
+      50% { box-shadow: 0 6px 50px rgba(37,211,102,.7); }
+    }
+    .wa-float svg { width: 30px; height: 30px; fill: var(--white); }
+
+    /* ═══════════════════════════════════════
+       SCROLLBAR CUSTOM
+    ═══════════════════════════════════════ */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--dark); }
+    ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════
+       BOTÃO FLUTUANTE WHATSAPP
+       SUBSTITUA [LINK WHATSAPP] pelo link real
+  ═════════════════════════════════════════ -->
+  <a href="[LINK WHATSAPP]" target="_blank" rel="noopener" class="wa-float" aria-label="Fale no WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16 0C7.16 0 0 7.16 0 16c0 2.82.74 5.46 2.03 7.76L0 32l8.48-2.02A15.93 15.93 0 0 0 16 32c8.84 0 16-7.16 16-16S24.84 0 16 0Zm8.26 22.39c-.35.98-2.04 1.88-2.8 1.99-.72.1-1.63.15-2.63-.17a23.7 23.7 0 0 1-2.38-.88C12.98 22 10.77 19.4 10.6 19.2c-.18-.2-1.46-1.94-1.46-3.7 0-1.77.93-2.64 1.26-3 .33-.35.72-.44.96-.44l.69.01c.22.01.52-.08.81.62l1.15 2.78c.1.24.17.52.01.83l-.48.77-.35.54c.2.32.8 1.24 1.72 2.01 1.18 1 2.17 1.3 2.48 1.44.3.14.48.12.66-.07l1.05-1.24c.22-.28.44-.23.74-.14l2.34.96c.3.13.5.19.57.3.07.1.07.6-.28 1.58Z"/></svg>
+  </a>
+
+  <!-- ════════════════════════════════════════
+       NAVBAR
+  ═════════════════════════════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Menu principal">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-logo">Marlon<span>.</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#diferenciais">Diferenciais</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#depoimentos">Resultados</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <!-- SUBSTITUA [LINK WHATSAPP] pelo link real -->
+        <li><a href="[LINK WHATSAPP]" target="_blank" class="btn btn-primary" style="padding:.6rem 1.4rem;">Agendar avaliação</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════
+       1. HERO SECTION
+  ═════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="container hero-inner">
+
+      <!-- Conteúdo textual -->
+      <div class="hero-content">
+        <div class="hero-tag">
+          ⚡ Personal Trainer em Santo Antônio — RN
+        </div>
+        <h1 class="display hero-title">
+          Transforme seu corpo com<br><em>método, ciência</em> e acompanhamento real
+        </h1>
+        <p class="hero-sub">
+          Chega de treinos genéricos e resultados que não aparecem. Com um programa personalizado, você evolui de verdade — com segurança e consistência.
+        </p>
+        <div class="hero-ctas">
+          <!-- SUBSTITUA [LINK WHATSAPP] pelo link real -->
+          <a href="[LINK WHATSAPP]" target="_blank" class="btn btn-primary">
+            📅 Agende sua avaliação gratuita
+          </a>
+          <a href="#sobre" class="btn btn-outline">Conheça o método</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>500+</strong>
+            <span>Alunos atendidos</span>
+          </div>
+          <div class="hero-stat">
+            <strong>8+</strong>
+            <span>Anos de experiência</span>
+          </div>
+          <div class="hero-stat">
+            <strong>98%</strong>
+            <span>Satisfação dos alunos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Foto do personal -->
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-bg"></div>
+        <div class="hero-photo">
+          <!--
+            SUBSTITUA este bloco pelo código abaixo quando tiver a foto:
+            <img src="[FOTO_HERO_PERSONAL]" alt="Marlon Narciso — Personal Trainer" loading="eager" />
+          -->
+          <div class="photo-placeholder">
+            <svg width="64" height="64" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+            [FOTO DO PERSONAL — Marlon Narciso]
+          </div>
+        </div>
+        <div class="hero-badge">
+          <strong>CREF</strong>
+          Certificado &amp; Especialista
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       2. DIFERENCIAIS
+  ═════════════════════════════════════════ -->
+  <section id="diferenciais" class="section">
+    <div class="container">
+      <div class="reveal" style="text-align:center; max-width:600px; margin-inline:auto;">
+        <span class="tag">Por que escolher o Marlon</span>
+        <h2>O que faz seu resultado ser diferente</h2>
+      </div>
+      <div class="cards-grid">
+
+        <div class="card reveal reveal-delay-1">
+          <div class="card-icon">🏋️</div>
+          <h3>Avaliação física completa</h3>
+          <p>Análise de composição corporal, histórico e objetivos antes de qualquer treino. Nada de suposições.</p>
+        </div>
+
+        <div class="card reveal reveal-delay-2">
+          <div class="card-icon">📋</div>
+          <h3>Planos 100% personalizados</h3>
+          <p>Cada protocolo é desenhado para o seu corpo, rotina e objetivo — nunca copiado da internet.</p>
+        </div>
+
+        <div class="card reveal reveal-delay-3">
+          <div class="card-icon">📱</div>
+          <h3>Acompanhamento via app</h3>
+          <p>Fichas de treino, feedback semanal e comunicação direta com o personal direto no seu celular.</p>
+        </div>
+
+        <div class="card reveal reveal-delay-3">
+          <div class="card-icon">📈</div>
+          <h3>Resultados comprovados</h3>
+          <p>Reavaliações mensais com comparativos reais. Você vê, sente e mede a sua evolução.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       3. COMO FUNCIONA
+  ═════════════════════════════════════════ -->
+  <section id="como-funciona" class="section section--dark">
+    <div class="container">
+      <div class="reveal" style="text-align:center; max-width:600px; margin-inline:auto;">
+        <span class="tag">O processo</span>
+        <h2 style="color:#fff;">Três etapas até o seu melhor resultado</h2>
+        <p>Simples, claro e eficiente. Cada etapa existe por um motivo.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal reveal-delay-1">
+          <div class="step-num">01</div>
+          <h3>Avaliação Gratuita</h3>
+          <p>Entendemos sua composição corporal, limitações, histórico e objetivos. A base de tudo.</p>
+        </div>
+        <div class="step reveal reveal-delay-2">
+          <div class="step-num">02</div>
+          <h3>Prescrição do Protocolo</h3>
+          <p>Criamos um plano de treino e orientações nutricionais adaptados exclusivamente para você.</p>
+        </div>
+        <div class="step reveal reveal-delay-3">
+          <div class="step-num">03</div>
+          <h3>Acompanhamento Semanal</h3>
+          <p>Ajustes contínuos com base nos seus dados — porque o seu progresso precisa de atenção constante.</p>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:3.5rem;" class="reveal">
+        <!-- SUBSTITUA [LINK WHATSAPP] pelo link real -->
+        <a href="[LINK WHATSAPP]" target="_blank" class="btn btn-primary" style="font-size:1.1rem; padding:1rem 2.5rem;">
+          Começar agora →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       4. DEPOIMENTOS & RESULTADOS
+  ═════════════════════════════════════════ -->
+  <section id="depoimentos" class="section section--dark" style="background:#13102A;">
+    <div class="container">
+      <div class="reveal" style="text-align:center; max-width:600px; margin-inline:auto; margin-bottom:2rem;">
+        <span class="tag">Prova social</span>
+        <h2 style="color:#fff;">Quem treina comigo, não para</h2>
+        <p>Histórias reais de pessoas que decidiram mudar e foram até o fim.</p>
+      </div>
+
+      <!-- Grid de depoimentos -->
+      <div class="testimonials-grid">
+
+        <div class="testimonial reveal reveal-delay-1">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Em 3 meses perdi 12 kg sem passar fome e sem largar a minha rotina de trabalho. O Marlon entendeu minha vida e montou um plano que coube na minha agenda."</blockquote>
+          <div class="testimonial-author">
+            <!--
+              SUBSTITUA o div .avatar pelo código abaixo quando tiver a foto:
+              <img class="avatar" src="[FOTO_ALUNO_1]" alt="Ana Paula S." />
+            -->
+            <div class="avatar">👩</div>
+            <div>
+              <strong>Ana Paula S.</strong>
+              <span>Professora, 34 anos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial reveal reveal-delay-2">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Treinava há anos sem resultado. Com o Marlon aprendi que treino bom é treino inteligente. Ganhei 8 kg de massa em 5 meses e nunca me senti tão disposto."</blockquote>
+          <div class="testimonial-author">
+            <div class="avatar">👨</div>
+            <div>
+              <strong>Ricardo M.</strong>
+              <span>Empresário, 29 anos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial reveal reveal-delay-3">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Voltei a me sentir bem no meu próprio corpo depois de dois anos sedentária. O acompanhamento pelo app fez toda diferença — é como ter um personal na sua bolsa."</blockquote>
+          <div class="testimonial-author">
+            <div class="avatar">👩</div>
+            <div>
+              <strong>Fernanda C.</strong>
+              <span>Enfermeira, 41 anos</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Antes/Depois -->
+      <div class="reveal" style="margin-top:4rem; text-align:center;">
+        <span class="tag">Transformações reais</span>
+        <h3 style="color:#fff; margin-bottom:.5rem;">Antes &amp; Depois</h3>
+        <p style="margin-bottom:2rem; font-size:.9rem;">*Resultados individuais. Fotos publicadas com autorização dos alunos.</p>
+      </div>
+      <div class="results-strip reveal">
+        <!--
+          SUBSTITUA os div.result-card pelos <img> reais:
+          <div class="result-card">
+            <img src="[FOTO_ANTES_DEPOIS_1]" alt="Transformação — [Nome do aluno]" loading="lazy" />
+            <div class="result-label">João, -15kg <span>6 meses de treino</span></div>
+          </div>
+        -->
+        <div class="result-card">
+          <div class="result-placeholder">
+            <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            [FOTO RESULTADO 1]
+          </div>
+          <div class="result-label">Aluno 1 — -15 kg <span>6 meses de treino</span></div>
+        </div>
+        <div class="result-card">
+          <div class="result-placeholder">
+            <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            [FOTO RESULTADO 2]
+          </div>
+          <div class="result-label">Aluno 2 — +8 kg massa <span>5 meses de treino</span></div>
+        </div>
+        <div class="result-card">
+          <div class="result-placeholder">
+            <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            [FOTO RESULTADO 3]
+          </div>
+          <div class="result-label">Aluno 3 — Recomposição <span>4 meses de treino</span></div>
+        </div>
+        <div class="result-card">
+          <div class="result-placeholder">
+            <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            [FOTO RESULTADO 4]
+          </div>
+          <div class="result-label">Aluno 4 — -10 kg <span>3 meses de treino</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       5. SOBRE O PERSONAL
+  ═════════════════════════════════════════ -->
+  <section id="sobre" class="section">
+    <div class="container">
+      <div class="sobre-grid">
+
+        <!-- Foto profissional -->
+        <div class="sobre-foto reveal">
+          <div class="sobre-foto-img">
+            <!--
+              SUBSTITUA este bloco pelo código abaixo:
+              <img src="[FOTO_PROFISSIONAL_MARLON]" alt="Marlon Narciso — Personal Trainer" loading="lazy" />
+            -->
+            <div class="photo-placeholder2">
+              <svg width="64" height="64" fill="none" viewBox="0 0 24 24" stroke="#7C3AED"><path stroke-linecap="round" stroke-linejoin="round" stroke-width=".8" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+              [FOTO PROFISSIONAL — Marlon Narciso]
+            </div>
+          </div>
+          <div class="sobre-deco"></div>
+          <div class="sobre-cert-badge">
+            <strong>CREF</strong>
+            Profissional de Educação Física
+          </div>
+        </div>
+
+        <!-- Conteúdo textual -->
+        <div class="sobre-content reveal reveal-delay-2">
+          <span class="tag">Quem é o Marlon</span>
+          <h2>Mais do que um personal — um parceiro de evolução</h2>
+          <p>
+            Sou <strong>Marlon Narciso</strong>, profissional de Educação Física com mais de <strong>8 anos de experiência</strong> em treinamento personalizado em Santo Antônio - RN e região. Já acompanhei centenas de alunos em jornadas de emagrecimento, hipertrofia, condicionamento e qualidade de vida.
+          </p>
+          <p>
+            Minha filosofia é simples: <strong>sem atalhos, sem promessas impossíveis</strong>. Cada treino é baseado em ciência, adaptado à sua realidade e ajustado semana a semana conforme os seus resultados.
+          </p>
+
+          <div class="creds">
+            <!-- SUBSTITUA / adicione conforme suas credenciais reais -->
+            <div class="cred"><div class="cred-dot"></div>Graduado em Educação Física — [NOME DA UNIVERSIDADE]</div>
+            <div class="cred"><div class="cred-dot"></div>Especialização em Fisiologia do Exercício</div>
+            <div class="cred"><div class="cred-dot"></div>Certificado em Musculação e Hipertrofia Funcional</div>
+            <div class="cred"><div class="cred-dot"></div>CREF [NÚMERO DO CREF] — ativo</div>
+            <div class="cred"><div class="cred-dot"></div>Atendimento presencial e online</div>
+          </div>
+
+          <!-- SUBSTITUA [LINK WHATSAPP] pelo link real -->
+          <a href="[LINK WHATSAPP]" target="_blank" class="btn btn-purple">
+            💬 Fale comigo agora
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       6. PLANOS / SERVIÇOS
+  ═════════════════════════════════════════ -->
+  <section id="planos" class="section" style="background:#F5F3FF;">
+    <div class="container">
+      <div class="reveal" style="text-align:center; max-width:600px; margin-inline:auto;">
+        <span class="tag">Investimento</span>
+        <h2>Escolha o plano ideal para você</h2>
+        <p>Todos os planos incluem avaliação física gratuita no início. Valores sob consulta disponíveis via WhatsApp.</p>
+      </div>
+      <div class="planos-grid">
+
+        <!-- Plano 1 -->
+        <div class="plano reveal reveal-delay-1">
+          <div class="plano-icon">🌱</div>
+          <div class="plano-nome">Starter</div>
+          <div class="plano-desc">Ideal para quem está começando ou quer retomar os treinos.</div>
+          <div class="plano-preco">Sob<sub> consulta</sub></div>
+          <ul class="plano-lista">
+            <li class="plano-item"><div class="plano-item-check">✓</div>Avaliação física inicial</li>
+            <li class="plano-item"><div class="plano-item-check">✓</div>Planilha de treino personalizada</li>
+            <li class="plano-item"><div class="plano-item-check">✓</div>1 reavaliação/mês</li>
+            <li class="plano-item"><div class="plano-item-check">✓</div>Suporte via WhatsApp (horário comercial)</li>
+          </ul>
+          <!-- SUBSTITUA [LINK WHATSAPP] -->
+          <a href="[LINK WHATSAPP]" target="_blank" class="btn btn-outline" style="color:var(--purple); border-color:var(--purple); width:100%; justify-content:center;">Quero esse plano</a>
+        </div>
+
+        <!-- Plano 2 — DESTAQUE -->
+        <div class="plano plano--destaque reveal reveal-delay-2">
+          <div class="plano-label">✦ Mais popular</div>
+          <div class="plano-icon">⚡</div>
+          <div class="plano-nome">Performance</div>
+          <div class="plano-desc">O plano completo para quem quer resultados consistentes e rápidos.</div>
+          <div class="plano-preco">Sob<sub> consulta</sub></div>
+          <ul class="plano-lista">
+            <li class="plano-item"><div class="plano-item-check">✓</div>Avaliação física completa</li>
+            <li class="plano-item"><div class="plano-item-check">✓</div>Treino + orientação nutricional</li>
+            <li class="plano-item"><div class="plano-item-check">✓</div>Reavaliações quinzenais</li>
+            <li class="plano-item"><div class="plano-item-check">✓</div>Suporte WhatsApp prioritário</li>
+            <li class="plano-item"><div class="plano-item-check">✓</div>Acesso ao app de treino</li>
+          </ul>
+          <!-- SUBSTITUA [LINK WHATSAPP] -->
+          <a href="[LINK WHATSAPP]" target="_blank" class="btn btn-purple" style="width:100%; justify-content:center;">Quero esse plano</a>
+        </div>
+
+        <!-- Plano 3 -->
+        <div class="plano reveal reveal-delay-3">
+          <div class="plano-icon">🏆</div>
+          <div class="plano-nome">Elite</div>
+          <div class="plano-desc">Acompanhamento máximo para atletas e quem exige o melhor.</div>
+          <div class="plano-preco">Sob<sub> consulta</sub></div>
+          <ul class="plano-lista">
+            <li class="plano-item"><div class="plano-item-check">✓</div>Tudo do plano Performance</li>
+            <li class="plano-item"><div class="plano-item-check">✓</div>Sessões presenciais ilimitadas*</li>
+            <li class="plano-item"><div class="plano-item-check">✓</div>Consultoria nutricional avançada</li>
+            <li class="plano-item"><div class="plano-item-check">✓</div>Suporte 7 dias/semana</li>
+            <li class="plano-item"><div class="plano-item-check">✓</div>Relatório mensal de performance</li>
+          </ul>
+          <!-- SUBSTITUA [LINK WHATSAPP] -->
+          <a href="[LINK WHATSAPP]" target="_blank" class="btn btn-outline" style="color:var(--purple); border-color:var(--purple); width:100%; justify-content:center;">Quero esse plano</a>
+        </div>
+
+      </div>
+      <p style="text-align:center; font-size:.82rem; margin-top:1.5rem; color:var(--gray);">*Sessões presenciais sujeitas à disponibilidade de agenda e localização (Santo Antônio - RN e região).</p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       CTA BANNER FINAL
+  ═════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>Pronto para começar sua transformação?</h2>
+        <p>A avaliação é gratuita, sem compromisso. O único risco é continuar como está.</p>
+        <!-- SUBSTITUA [LINK WHATSAPP] -->
+        <a href="[LINK WHATSAPP]" target="_blank" class="btn btn-primary" style="font-size:1.1rem; padding:1.1rem 2.8rem;">
+          📅 Agendar avaliação gratuita
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       FOOTER
+  ═════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="nav-logo" style="font-size:2rem;">Marlon<span style="color:var(--yellow);">.</span></div>
+          <p>Personal trainer profissional em Santo Antônio - RN. Ciência, método e acompanhamento real para resultados que duram.</p>
+          <div class="social-links">
+            <!-- SUBSTITUA pelos links reais -->
+            <a href="[LINK_INSTAGRAM]" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="[LINK WHATSAPP]" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 32 32"><path d="M16 0C7.16 0 0 7.16 0 16c0 2.82.74 5.46 2.03 7.76L0 32l8.48-2.02A15.93 15.93 0 0016 32c8.84 0 16-7.16 16-16S24.84 0 16 0zm8.26 22.39c-.35.98-2.04 1.88-2.8 1.99-.72.1-1.63.15-2.63-.17a23.7 23.7 0 01-2.38-.88C12.98 22 10.77 19.4 10.6 19.2c-.18-.2-1.46-1.94-1.46-3.7 0-1.77.93-2.64 1.26-3 .33-.35.72-.44.96-.44l.69.01c.22.01.52-.08.81.62l1.15 2.78c.1.24.17.52.01.83l-.48.77-.35.54c.2.32.8 1.24 1.72 2.01 1.18 1 2.17 1.3 2.48 1.44.3.14.48.12.66-.07l1.05-1.24c.22-.28.44-.23.74-.14l2.34.96c.3.13.5.19.57.3.07.1.07.6-.28 1.58z"/></svg>
+            </a>
+            <!-- Adicione mais redes conforme necessário -->
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#diferenciais">Diferenciais</a></li>
+            <li><a href="#como-funciona">Como funciona</a></li>
+            <li><a href="#depoimentos">Resultados</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#planos">Planos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#planos">Treino presencial</a></li>
+            <li><a href="#planos">Personal online</a></li>
+            <li><a href="#planos">Consultoria fitness</a></li>
+            <li><a href="[LINK WHATSAPP]">Avaliação gratuita</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="[LINK WHATSAPP]">📱 WhatsApp</a></li>
+            <!-- SUBSTITUA pelo e-mail real -->
+            <li><a href="mailto:[SEU EMAIL]">✉️ [SEU EMAIL]</a></li>
+            <li><a href="#">📍 Santo Antônio — RN</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Marlon Narciso Personal Trainer. Todos os direitos reservados.</span>
+        <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
+          <!-- SUBSTITUA pelo link da política de privacidade -->
+          <a href="[LINK_POLITICA_PRIVACIDADE]">Política de Privacidade</a>
+          <a href="[LINK_TERMOS_DE_USO]">Termos de Uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════
+       JAVASCRIPT
+  ═════════════════════════════════════════ -->
+  <script>
+    /* ─── Navbar scroll ─── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    /* ─── Hamburger menu ─── */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    // Fecha ao clicar em link
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* ─── Reveal on scroll (Intersection Observer) ─── */
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+
+    /* ─── Smooth scroll para âncoras ─── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        const target = document.getElementById(id);
+        if (target) {
+          e.preventDefault();
+          const offset = 80;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
